@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Directory with Search</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>User Directory</h1>
+    </header>
+    <main>
+      <div class="search-container">
+        <input type="text" id="userIdInput" placeholder="Enter User ID" />
+        <button id="searchBtn">Search</button>
+      </div>
+      <div id="dataDisplay">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody">
+            <!-- Data will be dynamically inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer>
+      <p>© 2025 User Directory App</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
