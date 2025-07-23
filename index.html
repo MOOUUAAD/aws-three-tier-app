@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Directory with Search</title>
     <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -13,10 +16,16 @@
     </header>
     <main>
       <div class="search-container">
-        <input type="text" id="userIdInput" placeholder="Enter User ID" aria-label="Enter User ID" />
+        <input
+          type="text"
+          id="userIdInput"
+          placeholder="Enter User ID"
+          aria-label="Enter User ID"
+        />
         <button id="searchBtn">Search</button>
       </div>
-      <div class="table-container"> <div id="dataDisplay">
+      <div class="table-container">
+        <div id="dataDisplay">
           <table>
             <thead>
               <tr>
@@ -26,8 +35,7 @@
                 <th>Email</th>
               </tr>
             </thead>
-            <tbody id="userTableBody">
-              </tbody>
+            <tbody id="userTableBody"></tbody>
           </table>
         </div>
       </div>
@@ -35,5 +43,6 @@
     <footer>
       <p>© 2025 User Directory App</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

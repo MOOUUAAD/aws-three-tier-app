@@ -8,7 +8,7 @@ document.getElementById("searchBtn").addEventListener("click", () => {
 
   // Call API Gateway to fetch specific user by ID
   fetch(
-    `https://jbb8jzqftg.execute-api.us-east-1.amazonaws.com/prod/users?userId=${userId}`
+    `https://eecc8rzwwf.execute-api.eu-north-1.amazonaws.com/prod/users?userId=${userId}`
   )
     .then((response) => {
       if (!response.ok) {
