@@ -1,0 +1,62 @@
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { DynamoDBDocumentClient, GetCommand } from "@aws-sdk/lib-dynamodb";
+
+// Initialize DynamoDB Client
+const client = new DynamoDBClient({ region: "us-east-1" });
+const ddbDocClient = DynamoDBDocumentClient.from(client);
+
+export const handler = async (event) => {
+    console.log("Received Event:", JSON.stringify(event));
+
+    // Extract userId from queryStringParameters
+    const userId = event.queryStringParameters?.userId;
+
+    // CORS headers
+    const responseHeaders = {
+        'Access-Control-Allow-Origin': 'https://d2g8jf3ftq5pqb.cloudfront.net',  // Allow all origins (use specific domains if needed)
+    };
+
+    // Check if userId is present
+    if (!userId) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ message: "Missing userId" }),
+            headers: responseHeaders,  // Include CORS headers
+        };
+    }
+
+    // Create a GetCommand to retrieve data from DynamoDB
+    const command = new GetCommand({
+        TableName: "UserData",
+        Key: { userId }, // Key must match the primary key in your table
+    });
+
+    try {
+        // Execute the DynamoDB GetCommand
+        const response = await ddbDocClient.send(command);
+
+        // Check if an item is returned
+        if (!response.Item) {
+            return {
+                statusCode: 404,
+                body: JSON.stringify({ message: "User not found" }),
+                headers: responseHeaders,  // Include CORS headers
+            };
+        }
+
+        // Return the retrieved item
+        return {
+            statusCode: 200,
+            body: JSON.stringify(response.Item),
+            headers: responseHeaders,  // Include CORS headers
+        };
+    } catch (error) {
+        console.error("Error retrieving data:", error);
+
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ message: "Internal Server Error", error }),
+            headers: responseHeaders,  // Include CORS headers
+        };
+    }
+};
