@@ -199,7 +199,7 @@ I set up a simple DynamoDB table to store user data.
 
 After creating the table, I added some dummy data to test with.
 
-<img width="957" height="323" alt="image" src="https://github.com/user-attachments/assets/20f42c59-d80b-4013-bd07-6d5ba9c84f1b" />
+<img width="969" height="319" alt="image" src="https://github.com/user-attachments/assets/645b1f0d-080f-49be-9db8-3dce28583e50" />
 
 
 ### Step 2: Grant Lambda Permissions
@@ -223,7 +223,6 @@ Connecting all the tiers revealed a few common but critical issues that I needed
 ### Issue 1: Missing API URL in `script.js`
 Initially, the frontend couldn't communicate with the backend. Using the browser's developer tools, I found an error in `script.js`: the API Gateway Invoke URL was missing. I added the URL and re-uploaded the file to S3.
 
-*(Image of the updated script.js file will be displayed here)*
 
 ### Issue 2: CloudFront Cache Invalidation
 After updating the `script.js` file in S3, the website still didn't work because CloudFront was serving the old, cached version. I created a CloudFront **invalidation** for `/*` to force it to fetch the latest version of all files.
@@ -231,14 +230,6 @@ After updating the `script.js` file in S3, the website still didn't work because
 <img width="1081" height="436" alt="image" src="https://github.com/user-attachments/assets/e52b9241-2207-4535-aaf3-375868c4d981" />
 
 
-### Issue 3: CORS Error
-The final hurdle was a **CORS (Cross-Origin Resource Sharing)** error. The browser blocked the request because the API Gateway was not configured to accept requests from the CloudFront domain.
-
-#### Solution:
-1.  **Enable CORS in API Gateway**: I used the "Enable CORS" action in the API Gateway console, which automatically sets up the necessary `OPTIONS` method and headers. I specified my CloudFront URL as an allowed origin.
-2.  **Add CORS Header in Lambda**: As a final step, I added the `Access-Control-Allow-Origin: '*'` header to the response object in my Lambda function to ensure the browser would accept the cross-origin response.
-
-*(Images of enabling CORS and the final Lambda code will be displayed here)*
 
 </details>
 
