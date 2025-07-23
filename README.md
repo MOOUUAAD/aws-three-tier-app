@@ -101,9 +101,9 @@ This application showcases how I seamlessly connected various AWS services to bu
 
 ## 📚 Table of Contents
 
-*   [Presentation Layer](#-presentation-layer)
+*   [Presentation Layer](#️-presentation-layer)
 *   [Logic Layer](#-logic-layer)
-*   [Data Layer](#-data-layer)
+*   [Data Layer](#️-data-layer)
 *   [Debugging and Final Integration](#-debugging-and-final-integration)
 *   [Conclusion](#-what-i-learned)
 
