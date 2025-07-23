@@ -1,202 +1,189 @@
-# Building A Three-Tier Web-App on AWS
+<div align="center">
 
-This project demonstrates how I built a Three-Tier Web Application using a variety of AWS services. It integrates Lambda, DynamoDB, CloudFront, API Gateway, and S3 to create a fully functional, scalable web application with dynamic data processing.
+# 🚀 Building A Three-Tier Web App on AWS 🚀
 
-## Key Features
+</div>
 
-*   **Lambda**: Used for serverless backend logic to handle requests and interact with DynamoDB.
-*   **DynamoDB**: A NoSQL database used to store and retrieve user data efficiently.
-*   **API Gateway**: Exposes the Lambda functions via RESTful APIs for seamless communication.
-*   **CloudFront**: Acts as the CDN to deliver static content faster to end-users globally.
-*   **S3**: Used for storing and serving static web assets (HTML, CSS, JavaScript files).
+> This project demonstrates how I built a fully functional, scalable Three-Tier Web Application by integrating a variety of powerful AWS services.
 
-## 3-Tier Architecture
+---
+
+### 🛠️ Technologies & Services Used
+
+<p align="center">
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"/>
+  <img src="https://img.shields.io/badge/AWS_Lambda-FF9900?style=for-the-badge&logo=aws-lambda&logoColor=white" alt="Lambda"/>
+  <img src="https://img.shields.io/badge/Amazon_DynamoDB-4053D6?style=for-the-badge&logo=amazon-dynamodb&logoColor=white" alt="DynamoDB"/>
+  <img src="https://img.shields.io/badge/Amazon_API_Gateway-FF4F8B?style=for-the-badge&logo=amazon-api-gateway&logoColor=white" alt="API Gateway"/>
+  <img src="https://img.shields.io/badge/Amazon_CloudFront-FF9900?style=for-the-badge&logo=amazon-cloudfront&logoColor=white" alt="CloudFront"/>
+  <img src="https://img.shields.io/badge/Amazon_S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white" alt="S3"/>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
+</p>
+
+---
+
+### 🏗️ 3-Tier Architecture
 
 This application showcases how I seamlessly connected various AWS services to build a powerful, cost-effective web app. I can interact with the app by sending HTTP requests to an API Gateway endpoint, where Lambda functions process the data and return responses based on the DynamoDB contents.
 
-<img width="633" height="467" alt="image" src="https://github.com/user-attachments/assets/4b8913d0-1a18-4913-942c-7055cb0cf93e" />
+<p align="center">
+  <img width="633" height="467" alt="image" src="https://github.com/user-attachments/assets/4b8913d0-1a18-4913-942c-7055cb0cf93e" />
+</p>
 
+---
 
-## Table of Contents
+## 📚 Table of Contents
 
-*   [Introduction](#building-a-three-tier-web-app-on-aws)
-*   [Presentation Layer](#presentation-layer)
-    *   [Step 1: Setting Up the Frontend](#step-1-setting-up-the-frontend)
-    *   [Step 2: Create an S3 Bucket and Upload the Files](#step-2-create-an-s3-bucket-and-upload-the-files)
-    *   [Step 3: Create a CloudFront Distribution](#step-3-create-a-cloudfront-distribution)
-*   [Logic Layer](#logic-layer)
-    *   [Creating the Lambda Function](#moving-on-to-the-logic-layer)
-    *   [Create API Gateway](#create-api-gateway)
-    *   [Test the API Gateway and Copy the Invoke URL](#test-the-api-gateway-and-copy-the-invoke-url)
-*   [Data Layer](#data-layer)
-    *   [Setting Up the Data Tier](#setting-up-the-data-tier)
-    *   [Create a DynamoDB Table](#create-a-dynamodb-table)
-*   [Debugging and Final Integration](#debugging-and-final-integration)
-    *   [Fixing the Missing API URL](#missing-api-url-in-scriptjs)
-    *   [CloudFront Cache Invalidation](#cloudfront-cache-invalidation)
-    *   [Resolving CORS Errors](#cors-error)
-    *   [Final Test](#final-test)
-*   [Conclusion](#what-did-i-learn)
+*   [Presentation Layer](#-presentation-layer)
+*   [Logic Layer](#-logic-layer)
+*   [Data Layer](#-data-layer)
+*   [Debugging and Final Integration](#-debugging-and-final-integration)
+*   [Conclusion](#-what-i-learned)
 
-## Presentation Layer
+---
 
-### Step 1: Setting Up the Frontend
+## 🖥️ Presentation Layer
 
-The first step in building the Three-Tier Web Application was to create the frontend structure. This step involved setting up the `index.html`, `styles.css`, and `script.js` files to serve as the foundation for the web application.
+The Presentation Layer is the frontend of the application, responsible for the user interface and user interaction. It's built with HTML, CSS, and JavaScript, hosted on S3, and delivered globally via CloudFront.
+
+<details>
+<summary><strong>Click to expand: Step-by-Step Frontend Setup</strong></summary>
+
+### Step 1: Setting Up the Frontend Files
+
+The foundation of the web application consists of three core files:
 
 *   **`index.html`**: This file sets up the fundamental HTML structure of the web app, including the layout for content and interactive buttons.
 *   **`styles.css`**: This file manages the application's visual appearance, ensuring it is user-friendly and responsive across different devices.
 *   **`script.js`**: This file powers the app's interactivity, handling API requests to the AWS backend and displaying the retrieved data on the page.
 
-These files serve as the frontend building blocks of the application. Once the user interacts with the web page, `script.js` communicates with the backend (hosted on AWS Lambda) through API calls, retrieves data from the DynamoDB database, and displays the results dynamically on the frontend.
+### Step 2: Create an S3 Bucket and Host Files
 
-
-### Step 2: Create an S3 Bucket and Upload the Files
-
-After setting up the basic frontend files, the next step is to upload them using Amazon S3 (Simple Storage Service). S3 provides scalable object storage, making it an ideal choice for hosting static files such as HTML, CSS, and JavaScript.
+I used an Amazon S3 bucket for scalable object storage, making it the ideal choice for hosting the static `HTML`, `CSS`, and `JavaScript` files.
 
 *(Image of the S3 bucket will be displayed here)*
 
 ### Step 3: Create a CloudFront Distribution
 
-Amazon CloudFront is a Content Delivery Network (CDN) service that helps deliver static and dynamic web content, such as `.html`, `.css`, `.js`, and image files, with low latency and high transfer speeds to users worldwide.
+To ensure low latency and high transfer speeds for users worldwide, I set up Amazon CloudFront, a Content Delivery Network (CDN), to serve the content from the S3 bucket.
 
-In this step, I’ll use CloudFront to accelerate the delivery of my web application hosted on S3.
+#### Key Configuration Steps:
+1.  **Create a CloudFront Distribution**: I pointed the distribution's origin to my S3 bucket.
+2.  **Configure Origin Access Control (OAC)**: I enabled OAC to restrict direct access to the S3 bucket, ensuring that content is only served through CloudFront.
+3.  **Set Default Root Object**: I set `index.html` as the default root object.
+4.  **Update S3 Bucket Policy**: I updated the S3 bucket policy to grant CloudFront's OAC the necessary permissions to get objects.
 
-#### What is a CloudFront Distribution?
-
-A CloudFront distribution is a set of instructions that tells CloudFront how to deliver content. When I create a CloudFront distribution, I specify the origin (e.g., my S3 bucket), the caching behavior, and the domain name from which CloudFront should serve the files.
-
-#### How Does CloudFront Speed Up Distribution?
-
-CloudFront speeds up the delivery of content by using caching. When a user requests a resource (e.g., a page, image, or script), CloudFront serves the content from the edge location closest to the user, which is typically in a different geographic region. This reduces the round-trip time required for the data to travel across the internet and enhances the user experience by providing faster load times.
-
-Additionally, CloudFront caches the content in these edge locations, meaning that the same content doesn’t need to be retrieved from the origin (my S3 bucket) every time a new user accesses it. Once content is cached at an edge location, subsequent users who request that same content will receive it directly from the cache.
-
-#### Setting up CloudFront for My S3 Bucket
-
-1.  **Create a CloudFront Distribution**:
-    *   Go to the CloudFront console in AWS.
-    *   Click **Create Distribution**.
-    *   In the Origin Settings, for the **Origin Domain Name**, select my S3 bucket.
-
-    *(Image of CloudFront distribution creation will be displayed here)*
-
-2.  **Configure CloudFront for Restricted S3 Access**:
-    *   Origin Access Control (OAC) is a feature that helps restrict access to an S3 bucket only through CloudFront.
-    *   In the Origin Settings, I enabled **Origin Access Control**.
-    *   I also ensured that my S3 bucket policy allows only CloudFront to retrieve content.
-
-3.  **Configure Distribution Settings**:
-    *   Configure the default root object (`index.html`).
-
-    *(Image of CloudFront distribution settings will be displayed here)*
-
-4.  **Update S3 Bucket Policy**:
-    *   I copied the policy provided by CloudFront.
-    *   I went to my S3 bucket's permissions and edited the bucket policy.
-    *   I pasted the policy and saved the changes.
-
-    *(Image of S3 bucket policy update will be displayed here)*
-
-Now, I can access my website using the CloudFront distribution URL.
+Now, I can access my website using the secure CloudFront distribution URL.
 
 *(Image of the working website will be displayed here)*
 
-## Logic Layer
+</details>
 
-### Moving on to the Logic Layer
+---
 
-Next, I’ll focus on the Logic Layer, where I integrate Lambda functions and API Gateway. The goal is that when I click on “Search” in the UI with a userID, the request will be sent to API Gateway. The API Gateway will then forward the request to the Lambda function, which will search for the corresponding user data.
+## 🧠 Logic Layer
+
+The Logic Layer is the backend brain of the application. It processes requests from the frontend using a serverless approach with AWS Lambda and API Gateway.
+
+<details>
+<summary><strong>Click to expand: Step-by-Step Backend Setup</strong></summary>
+
+### Step 1: Creating the Lambda Function
+
+I wrote a Lambda function in Python to handle the backend logic. When triggered, this function queries the DynamoDB table based on the `userId` passed from the frontend.
 
 *(Images of Lambda function creation and testing will be displayed here)*
 
-For Lambda code, see my GitHub page.
+### Step 2: Create API Gateway
 
-### Create API Gateway
+API Gateway acts as the front door for the Lambda function. I set up a REST API to expose the Lambda function to the internet securely.
 
-After setting up the Lambda function, the next step is to create an API Gateway. API Gateway acts as a bridge between the frontend and my backend logic.
+#### Key Configuration Steps:
+1.  **Create a REST API**: I chose the REST API type for its flexibility.
+2.  **Define a Resource and Method**: I created a `/users` resource with a `GET` method.
+3.  **Link to Lambda**: I integrated the `GET` method with my Lambda function, allowing API Gateway to trigger it.
+4.  **Deploy the API**: I deployed the API to a stage (e.g., `prod`) to make it publicly accessible.
 
-Here’s how I set up the API Gateway:
-
-1.  **Create a New API**:
-    *   In the AWS Console, I navigated to the API Gateway service and clicked on **Create API**.
-    *   I chose **REST API**.
-
-2.  **Define a Resource**:
-    *   I created a resource, for example, `/user`, for searching user data.
-
-3.  **Create a GET Method**:
-    *   I set up a GET method for this resource to retrieve user data.
-
-4.  **Link to Lambda Function**:
-    *   In the integration settings, I chose **Lambda Function** and selected the Lambda function I created earlier.
-
-5.  **Deploy the API**:
-    *   I deployed the API by creating a new stage (e.g., `prod`).
+This provides an **Invoke URL** that the frontend JavaScript can call.
 
 *(Images of API Gateway creation and configuration will be displayed here)*
 
-### Test the API Gateway and Copy the Invoke URL
+</details>
 
-Once the API Gateway is deployed, it provides an **Invoke URL**. This URL is the endpoint where my API is hosted. I can test the API by appending a query string to the URL, for example: `https://mhlf4cvftg.execute-api.us-east-1.amazonaws.com/prod/users?userId=1`.
+---
 
-## Data Layer
+## 🗃️ Data Layer
 
-### Setting Up the Data Tier
+The Data Layer is responsible for data persistence. I used Amazon DynamoDB, a fully managed NoSQL database, for fast and flexible data storage.
 
-The final step is setting up the Data Tier. This involves creating a DynamoDB table.
+<details>
+<summary><strong>Click to expand: Step-by-Step Database Setup</strong></summary>
 
-### Create a DynamoDB Table
+### Step 1: Create a DynamoDB Table
 
-1.  **Log in to the AWS Management Console**: I navigated to the DynamoDB service.
-2.  **Create a Table**:
-    *   **Table Name**: `UserData`
-    *   **Partition Key**: `userId` (String)
-3.  **Enter an item** (dummy data) into the table.
+I set up a simple DynamoDB table to store user data.
+
+*   **Table Name**: `UserData`
+*   **Partition Key**: `userId` (String)
+
+After creating the table, I added some dummy data to test with.
 
 *(Images of DynamoDB table creation and adding an item will be displayed here)*
 
-Next, I added permissions for the Lambda function to access DynamoDB.
+### Step 2: Grant Lambda Permissions
+
+To allow the Lambda function to read from the DynamoDB table, I attached the `DynamoDBReadDataOnly` policy to the Lambda function's execution role in IAM.
 
 *(Images of adding permissions to the Lambda role will be displayed here)*
 
-## Debugging and Final Integration
+</details>
 
-### Missing API URL in script.js
+---
 
-Upon inspecting the browser console, I noticed an error in the `script.js` file. The API URL was missing. I updated the `script.js` file to include the correct API URL and re-uploaded it to the S3 bucket.
+## 🔍 Debugging and Final Integration
+
+Connecting all the tiers revealed a few common but critical issues that I needed to resolve.
+
+<details>
+<summary><strong>Click to expand: Debugging and Troubleshooting Steps</strong></summary>
+
+### Issue 1: Missing API URL in `script.js`
+Initially, the frontend couldn't communicate with the backend. Using the browser's developer tools, I found an error in `script.js`: the API Gateway Invoke URL was missing. I added the URL and re-uploaded the file to S3.
 
 *(Image of the updated script.js file will be displayed here)*
 
-### CloudFront Cache Invalidation
-
-The website still didn’t work as it was referencing the old API URL. To resolve this, I created an invalidation under the CloudFront distribution to force CloudFront to fetch the latest version of the files from the S3 bucket.
+### Issue 2: CloudFront Cache Invalidation
+After updating the `script.js` file in S3, the website still didn't work because CloudFront was serving the old, cached version. I created a CloudFront **invalidation** for `/*` to force it to fetch the latest version of all files.
 
 *(Image of CloudFront invalidation will be displayed here)*
 
-### CORS Error
+### Issue 3: CORS Error
+The final hurdle was a **CORS (Cross-Origin Resource Sharing)** error. The browser blocked the request because the API Gateway was not configured to accept requests from the CloudFront domain.
 
-I still received a CORS (Cross-Origin Resource Sharing) error. This happens because the API Gateway does not allow requests from other domains, such as my CloudFront distribution. To fix this, I enabled and configured CORS in my API Gateway to allow requests from my CloudFront distribution's origin.
+#### Solution:
+1.  **Enable CORS in API Gateway**: I used the "Enable CORS" action in the API Gateway console, which automatically sets up the necessary `OPTIONS` method and headers. I specified my CloudFront URL as an allowed origin.
+2.  **Add CORS Header in Lambda**: As a final step, I added the `Access-Control-Allow-Origin: '*'` header to the response object in my Lambda function to ensure the browser would accept the cross-origin response.
 
-*(Images of enabling CORS in API Gateway will be displayed here)*
+*(Images of enabling CORS and the final Lambda code will be displayed here)*
 
-As a last step, I also added the `Access-Control-Allow-Origin: '*'` header to my Lambda function's response.
+</details>
 
-*(Image of the updated Lambda function code will be displayed here)*
+### ✅ Final Test
 
-### Final Test
-
-After successfully configuring CORS and refreshing my CloudFront distribution, the application is now working as expected.
+After successfully configuring CORS and refreshing the CloudFront distribution, the application worked as expected! Searching for a `userId` now correctly fetches and displays the data from DynamoDB.
 
 *(Image of the final working application will be displayed here)*
 
-## What Did I Learn?
+---
 
-*   **Three-Tier Architecture Setup**: I implemented a three-tier architecture with a Presentation Layer (S3 and CloudFront), a Logic Layer (Lambda and API Gateway), and a Data Tier (DynamoDB).
-*   **Integration Across Services**: I successfully integrated multiple AWS services.
-*   **CORS Configuration**: I learned the importance of configuring CORS in API Gateway.
-*   **CloudFront Caching**: I understood how CloudFront caching works and how to use invalidations.
-*   **Debugging and Iterative Development**: I gained hands-on experience in identifying and fixing issues.
+## 🎓 What I Learned
 
-This project demonstrates the power of AWS in building scalable, secure, and efficient applications.
+*   **Three-Tier Architecture Implementation**: I successfully implemented a full three-tier architecture using a serverless and cloud-native approach on AWS.
+*   **Seamless Service Integration**: I gained hands-on experience integrating S3, CloudFront, Lambda, API Gateway, and DynamoDB to create a cohesive application.
+*   **Importance of CORS**: I learned how to diagnose and resolve CORS issues, a critical skill for developing web applications with separate frontend and backend resources.
+*   **CloudFront Caching and Invalidation**: I understood the practical application of CDN caching and how to manage it with invalidations to deploy updates effectively.
+*   **Iterative Debugging**: This project reinforced the importance of systematic debugging using browser tools, logs, and testing at each integration point.
+
+This project was a fantastic demonstration of the power and flexibility of AWS for building modern, scalable, and secure applications.
