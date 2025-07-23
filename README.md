@@ -176,7 +176,8 @@ API Gateway acts as the front door for the Lambda function. I set up a REST API 
 
 This provides an **Invoke URL** that the frontend JavaScript can call.
 
-*(Images of API Gateway creation and configuration will be displayed here)*
+<img width="1069" height="410" alt="image" src="https://github.com/user-attachments/assets/27a2612e-7d6c-48a2-9f1a-72321ccef885" />
+
 
 </details>
 
