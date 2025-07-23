@@ -143,7 +143,8 @@ To ensure low latency and high transfer speeds for users worldwide, I set up Ama
 
 Now, I can access my website using the secure CloudFront distribution URL.
 
-*(Image of the working website will be displayed here)*
+<img width="1366" height="679" alt="image" src="https://github.com/user-attachments/assets/d59fa25a-d461-4476-88a8-3c00cc79e5ab" />
+
 
 </details>
 
