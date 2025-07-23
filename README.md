@@ -8,19 +8,23 @@
 
 ---
 
-### 🛠️ Technologies & Services Used
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"/>
-  <img src="https://img.shields.io/badge/AWS_Lambda-FF9900?style=for-the-badge&logo=aws-lambda&logoColor=white" alt="Lambda"/>
-  <img src="https://img.shields.io/badge/Amazon_DynamoDB-4053D6?style=for-the-badge&logo=amazon-dynamodb&logoColor=white" alt="DynamoDB"/>
-  <img src="https://img.shields.io/badge/Amazon_API_Gateway-FF4F8B?style=for-the-badge&logo=amazon-api-gateway&logoColor=white" alt="API Gateway"/>
-  <img src="https://img.shields.io/badge/Amazon_CloudFront-FF9900?style=for-the-badge&logo=amazon-cloudfront&logoColor=white" alt="CloudFront"/>
-  <img src="https://img.shields.io/badge/Amazon_S3-569A31?style=for-the-badge&logo=amazon-s3&logoColor=white" alt="S3"/>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-</p>
+### 🛠️ Tech Stack & Services Used
+
+*Organized by architectural tier*
+
+</div>
+
+<div align="center">
+
+| Layer                | Technologies & Services                                                                                                                                                                                                                                                                                                                                                                                    |
+| :------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🖥️ **Presentation Layer** | <div style="display: inline-block; text-align: center; margin: 10px;"><img src="https://skillicons.dev/icons?i=html,css,js" alt="HTML, CSS, JS" height="45"><br><sub>HTML/CSS/JS</sub></div> <div style="display: inline-block; text-align: center; margin: 10px;"><img src="https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg" alt="Amazon S3" height="45"><br><sub>Amazon S3</sub></div> <div style="display: inline-block; text-align: center; margin: 10px;"><img src="https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/CloudFront.svg" alt="Amazon CloudFront" height="45"><br><sub>CloudFront</sub></div> |
+| 🧠 **Logic Layer**       | <div style="display: inline-block; text-align: center; margin: 10px;"><img src="https://icon.icepanel.io/AWS/svg/App-Integration/API-Gateway.svg" alt="AWS API Gateway" height="45"><br><sub>API Gateway</sub></div> <div style="display: inline-block; text-align: center; margin: 10px;"><img src="https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg" alt="AWS Lambda" height="45"><br><sub>AWS Lambda</sub></div>                                                                                                                                                                                               |
+| 🗃️ **Data Layer**        | <div style="display: inline-block; text-align: center; margin: 10px;"><img src="https://icon.icepanel.io/AWS/svg/Database/DynamoDB.svg" alt="Amazon DynamoDB" height="45"><br><sub>DynamoDB</sub></div>                                                                                                                                                                                                      |
+
+</div>
 
 ---
 
