@@ -16,15 +16,57 @@
 
 </div>
 
+<!-- The entire table is centered -->
 <div align="center">
-
-| Layer                | Technologies & Services                                                                                                                                                                                                                                                                                                                                                                                       |
-| :------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 🖥️ **Presentation Layer** | <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;"><div style="text-align: center;"><img src="https://skillicons.dev/icons?i=html,css,js" alt="HTML, CSS, JS" height="45"></div> <div style="text-align: center;"><img src="https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg" alt="Amazon S3" height="45"></div> <div style="text-align: center;"><img src="https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/CloudFront.svg" alt="Amazon CloudFront" height="45"></div></div> |
-| 🧠 **Logic Layer**       | <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;"><div style="text-align: center;"><img src="https://icon.icepanel.io/AWS/svg/App-Integration/API-Gateway.svg" alt="AWS API Gateway" height="45"></div> <div style="text-align: center;"><img src="https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg" alt="AWS Lambda" height="45"></div></div>                                                                                                                                                                                                                                                                |
-| 🗃️ **Data Layer**        | <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;"><div style="text-align: center;"><img src="https://icon.icepanel.io/AWS/svg/Database/DynamoDB.svg" alt="Amazon DynamoDB" height="45"></div></div>                                                                                                                                                                                                                                                                         |
-
+  <table style="width: 80%; border-collapse: collapse; border: 1px solid #444;">
+    <thead style="background-color: #161b22;">
+      <tr>
+        <th style="border: 1px solid #444; padding: 12px; text-align: center;">Layer</th>
+        <th style="border: 1px solid #444; padding: 12px; text-align: center;">Technologies & Services</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Presentation Layer Row -->
+      <tr>
+        <td style="width: 30%; border: 1px solid #444; padding: 15px; text-align: center; vertical-align: middle;">
+          <strong>🖥️ Presentation Layer</strong>
+        </td>
+        <td style="border: 1px solid #444; padding: 15px;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+            <img src="https://skillicons.dev/icons?i=html,css,js" alt="HTML, CSS, JS" height="45">
+            <img src="https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg" alt="Amazon S3" height="45">
+            <img src="https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/CloudFront.svg" alt="Amazon CloudFront" height="45">
+          </div>
+        </td>
+      </tr>
+      <!-- Logic Layer Row -->
+      <tr>
+        <td style="border: 1px solid #444; padding: 15px; text-align: center; vertical-align: middle;">
+          <strong>🧠 Logic Layer</strong>
+        </td>
+        <td style="border: 1px solid #444; padding: 15px;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+            <img src="https://icon.icepanel.io/AWS/svg/App-Integration/API-Gateway.svg" alt="AWS API Gateway" height="45">
+            <img src="https://icon.icepanel.io/AWS/svg/Compute/Lambda.svg" alt="AWS Lambda" height="45">
+          </div>
+        </td>
+      </tr>
+      <!-- Data Layer Row -->
+      <tr>
+        <td style="border: 1px solid #444; padding: 15px; text-align: center; vertical-align: middle;">
+          <strong>🗃️ Data Layer</strong>
+        </td>
+        <td style="border: 1px solid #444; padding: 15px;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
+            <img src="https://icon.icepanel.io/AWS/svg/Database/DynamoDB.svg" alt="Amazon DynamoDB" height="45">
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
+
   ### 🏗️ 3-Tier Architecture
 
 This application showcases how I seamlessly connected various AWS services to build a powerful, cost-effective web app. I can interact with the app by sending HTTP requests to an API Gateway endpoint, where Lambda functions process the data and return responses based on the DynamoDB contents.
