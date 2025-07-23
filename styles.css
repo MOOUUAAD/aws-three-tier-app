@@ -3,13 +3,13 @@ body {
     font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
     margin: 0;
     padding: 0;
-    background-color: #eef2f6; /* Softer background color */
+    background-color: #eef2f6; 
     color: #333;
     line-height: 1.6;
 }
 
 header {
-    background-color: #6A6DCD; /* Modern blue */
+    background-color: #6A6DCD;
     color: white;
     padding: 25px 0; /* Increased padding */
     text-align: center;
