@@ -14,7 +14,8 @@ This project demonstrates how I built a Three-Tier Web Application using a varie
 
 This application showcases how I seamlessly connected various AWS services to build a powerful, cost-effective web app. I can interact with the app by sending HTTP requests to an API Gateway endpoint, where Lambda functions process the data and return responses based on the DynamoDB contents.
 
-*(Image of the 3-tier architecture will be displayed here)*
+<img width="633" height="467" alt="image" src="https://github.com/user-attachments/assets/4b8913d0-1a18-4913-942c-7055cb0cf93e" />
+
 
 ## Table of Contents
 
