@@ -228,7 +228,8 @@ Initially, the frontend couldn't communicate with the backend. Using the browser
 ### Issue 2: CloudFront Cache Invalidation
 After updating the `script.js` file in S3, the website still didn't work because CloudFront was serving the old, cached version. I created a CloudFront **invalidation** for `/*` to force it to fetch the latest version of all files.
 
-*(Image of CloudFront invalidation will be displayed here)*
+<img width="1081" height="436" alt="image" src="https://github.com/user-attachments/assets/e52b9241-2207-4535-aaf3-375868c4d981" />
+
 
 ### Issue 3: CORS Error
 The final hurdle was a **CORS (Cross-Origin Resource Sharing)** error. The browser blocked the request because the API Gateway was not configured to accept requests from the CloudFront domain.
