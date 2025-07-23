@@ -206,7 +206,8 @@ After creating the table, I added some dummy data to test with.
 
 To allow the Lambda function to read from the DynamoDB table, I attached the `DynamoDBReadDataOnly` policy to the Lambda function's execution role in IAM.
 
-*(Images of adding permissions to the Lambda role will be displayed here)*
+<img width="1041" height="285" alt="image" src="https://github.com/user-attachments/assets/0b5c22bc-6152-45da-8722-4b416551d8c5" />
+
 
 </details>
 
