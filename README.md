@@ -199,7 +199,8 @@ I set up a simple DynamoDB table to store user data.
 
 After creating the table, I added some dummy data to test with.
 
-*(Images of DynamoDB table creation and adding an item will be displayed here)*
+<img width="957" height="323" alt="image" src="https://github.com/user-attachments/assets/20f42c59-d80b-4013-bd07-6d5ba9c84f1b" />
+
 
 ### Step 2: Grant Lambda Permissions
 
