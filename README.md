@@ -95,6 +95,7 @@ This application showcases how I seamlessly connected various AWS services to bu
 <p align="center">
   <img width="633" height="467" alt="image" src="https://github.com/user-attachments/assets/4b8913d0-1a18-4913-942c-7055cb0cf93e" />
 </p>
+
 ---
 
 ## 📚 Table of Contents
