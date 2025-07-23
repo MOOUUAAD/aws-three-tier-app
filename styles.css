@@ -1,35 +1,48 @@
 /* General styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Changed font to Poppins */
     margin: 0;
     padding: 0;
-    background-color: #f4f6f9;
+    background-color: #eef2f6; /* Softer background color */
     color: #333;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #104fad;
+    background-color: #6A6DCD; /* Modern blue */
     color: white;
-    padding: 20px 0;
+    padding: 25px 0; /* Increased padding */
     text-align: center;
-    font-size: 24px;
+    font-size: 28px; /* Larger header font */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+header h1 {
+    margin: 0; /* Remove default margin from h1 */
+    font-weight: 600; /* Bolder font for header */
 }
 
 main {
     margin: 40px auto;
-    width: 80%;
-    max-width: 1200px;
+    width: 90%; /* Slightly wider main content */
+    max-width: 1000px; /* Reduced max-width for better focus */
+    padding: 20px; /* Added padding to main for consistency */
+    background-color: #ffffff; /* White background for main content area */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
 }
 
 footer {
-    background-color: #104fad;
+    background-color: #6A6DCD; /* Consistent with header */
     color: white;
-    padding: 10px 0;
+    padding: 15px 0; /* Adjusted padding */
     text-align: center;
-    position: fixed;
-    bottom: 0;
+    /* Removed fixed positioning for better content flow, consider if needed */
+    /* position: fixed; */
+    /* bottom: 0; */
     width: 100%;
-    font-size: 14px;
+    font-size: 15px;
+    margin-top: 40px; /* Space above footer */
 }
 
 /* Search container */
@@ -37,90 +50,143 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
-    gap: 10px;
+    margin-bottom: 40px; /* Increased margin-bottom */
+    gap: 15px; /* Increased gap */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    width: 50%;
-    transition: border-color 0.3s ease-in-out;
+    padding: 12px 18px; /* More padding */
+    font-size: 17px; /* Slightly larger font */
+    border: 2px solid #D1D8DD; /* Softer border color */
+    border-radius: 8px; /* More rounded corners */
+    width: 60%; /* Adjusted width */
+    max-width: 350px; /* Max width for input */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06); /* Inner shadow */
 }
 
 input[type="text"]:focus {
     outline: none;
-    border-color: #104fad;
+    border-color: #4A90E2; /* Focus color consistent with theme */
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3); /* Subtle glow on focus */
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 25px; /* More padding */
+    font-size: 17px; /* Larger font */
     cursor: pointer;
     border: none;
-    border-radius: 5px;
-    background-color: #1b4e77;
+    border-radius: 8px; /* More rounded corners */
+    background-color: #5CB85C; /* A pleasant green for actions */
     color: white;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease; /* Added transform for subtle click effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for button */
 }
 
 button:hover {
-    background-color: #1b4e77;
+    background-color: #4CAE4C; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift button on hover */
+}
+
+button:active {
+    transform: translateY(0); /* Press down on click */
 }
 
 /* Table styles */
-#dataDisplay {
+.table-container { /* Style for the new table container */
+    overflow-x: auto; /* Ensures horizontal scroll for table on small screens */
     margin-top: 20px;
-    overflow-x: auto;
+    border-radius: 10px; /* Rounded corners for the table container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow for the table block */
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 600px; /* Ensure table doesn't get too squished */
 }
 
 th, td {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    text-align: center;
+    padding: 15px 20px; /* Increased padding for better readability */
+    border-bottom: 1px solid #eee; /* Lighter border for rows */
+    text-align: left; /* Align text to left for better readability */
 }
 
 th {
-    background-color: #222baa;
+    background-color: #6A6DCD; /* A deeper, calming blue-purple for headers */
     color: white;
-    font-weight: bold;
+    font-weight: 600; /* Bolder font for headers */
+    text-transform: uppercase; /* Uppercase headers */
+    letter-spacing: 0.5px; /* Slightly spaced letters */
 }
 
+th:first-child {
+    border-top-left-radius: 10px; /* Rounded corners for first header cell */
+}
+
+th:last-child {
+    border-top-right-radius: 10px; /* Rounded corners for last header cell */
+}
+
+
 td {
-    font-size: 14px;
+    font-size: 15px; /* Slightly larger font for table data */
     color: #555;
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f8fbfd; /* Very subtle alternating row color */
 }
 
 tr:hover {
-    background-color: #f1f1f1;
+    background-color: #eef7ff; /* Lighter hover effect */
+    transition: background-color 0.2s ease-in-out;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
+    main {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .search-container {
+        flex-direction: column; /* Stack input and button vertically */
+        gap: 15px;
+    }
+
     input[type="text"] {
-        width: 70%;
+        width: 90%; /* Wider input on smaller screens */
     }
 
     button {
-        font-size: 14px;
+        width: 90%; /* Wider button on smaller screens */
+        font-size: 16px;
     }
 
     th, td {
-        font-size: 12px;
-        padding: 8px;
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    footer {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    input[type="text"],
+    button {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    th, td {
+        padding: 8px 10px;
     }
 }
