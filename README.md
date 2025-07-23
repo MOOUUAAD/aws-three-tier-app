@@ -86,6 +86,7 @@
   </table>
 </div>
 
+---
 
   ### 🏗️ 3-Tier Architecture
 
