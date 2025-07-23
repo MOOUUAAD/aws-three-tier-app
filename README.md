@@ -1,5 +1,3 @@
-Of course. Here is the revised README file, updated to use the first-person pronoun "I" to reflect your individual work on the project.
-
 Building A Three-Tier Web App on AWS
 
 This project demonstrates how I built a Three-Tier Web Application using a variety of AWS services. It integrates Lambda, DynamoDB, CloudFront, API Gateway, and S3 to create a fully functional, scalable web application with dynamic data processing.
