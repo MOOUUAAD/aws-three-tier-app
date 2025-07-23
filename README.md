@@ -1,10 +1,30 @@
 <div align="center">
 
-## 🚀 Building A Three-Tier Web App on AWS 🚀
+# 🚀 Building A Three-Tier Web App on AWS 🚀
+
+*A serverless and scalable 3-tier web application built on the AWS ecosystem.*
 
 </div>
 
-> This project demonstrates how I built a fully functional, scalable Three-Tier Web Application by integrating a variety of powerful AWS services.
+<!-- Project Status & Socials -->
+<p align="center">
+  <img src="https://img.shields.io/badge/Project_Status-Complete-brightgreen?style=for-the-badge" alt="Project Status: Complete"/>
+  <!-- Optional: Add your social links -->
+  <!-- <a href="YOUR_LINKEDIN_URL"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a> -->
+  <!-- <a href="YOUR_PORTFOLIO_URL"><img src="https://img.shields.io/badge/Portfolio-WebApp-blue?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio"/></a> -->
+</p>
+
+<!-- Introduction Card -->
+<div align="center">
+  <table style="width: 90%; border: 1px solid #444; border-radius: 8px; background-color: #161b22; padding: 15px;">
+    <tr>
+      <td>
+        <h3 style="margin-top: 0;">🎯 Project Overview</h3>
+        <p style="margin-bottom: 0;">This project demonstrates how I built a fully functional, scalable Three-Tier Web Application by integrating a variety of powerful AWS services. It showcases a modern, cloud-native approach to web development, from frontend delivery to backend logic and data persistence.</p>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
 
