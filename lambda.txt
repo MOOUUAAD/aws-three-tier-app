@@ -2,7 +2,7 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, GetCommand } from "@aws-sdk/lib-dynamodb";
 
 // Initialize DynamoDB Client
-const client = new DynamoDBClient({ region: "us-east-1" });
+const client = new DynamoDBClient({ region: "eu-north-1" });
 const ddbDocClient = DynamoDBDocumentClient.from(client);
 
 export const handler = async (event) => {
@@ -13,7 +13,7 @@ export const handler = async (event) => {
 
     // CORS headers
     const responseHeaders = {
-        'Access-Control-Allow-Origin': 'https://d2g8jf3ftq5pqb.cloudfront.net',  // Allow all origins (use specific domains if needed)
+        'Access-Control-Allow-Origin': 'https://dqfw47dl4dgdc.cloudfront.net',  // Allow all origins (use specific domains if needed)
     };
 
     // Check if userId is present
