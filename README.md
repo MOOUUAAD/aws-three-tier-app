@@ -128,7 +128,8 @@ The foundation of the web application consists of three core files:
 
 I used an Amazon S3 bucket for scalable object storage, making it the ideal choice for hosting the static `HTML`, `CSS`, and `JavaScript` files.
 
-*(Image of the S3 bucket will be displayed here)*
+<img width="1342" height="470" alt="image" src="https://github.com/user-attachments/assets/74b47315-23e2-4812-bfce-8239df16815d" />
+
 
 ### Step 3: Create a CloudFront Distribution
 
