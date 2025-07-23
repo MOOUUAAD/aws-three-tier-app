@@ -43,9 +43,9 @@ This application showcases how I seamlessly connected various AWS services to bu
 
 The first step in building the Three-Tier Web Application was to create the frontend structure. This step involved setting up the `index.html`, `styles.css`, and `script.js` files to serve as the foundation for the web application.
 
-*   **index.html**: This file serves as the main HTML document that contains the structure of the web page. It defines the basic layout, such as the header, content section, and buttons, which will allow users to interact with the web app. The HTML structure also links to external CSS and JavaScript files to apply styling and functionality to the page.
-*   **styles.css**: This file is responsible for the look and feel of the web application. It defines styles such as fonts, colors, padding, and layout configurations to create a user-friendly, visually appealing experience. The `styles.css` file ensures that the web application is responsive and displays correctly across different devices.
-*   **script.js**: This JavaScript file provides the interactivity of the web app. It manages dynamic content, such as sending API requests to the backend (AWS API Gateway), and receiving and displaying data from the server. `script.js` handles client-side logic, including form submissions, error handling, and updating the UI with the response data.
+*   **`index.html`**: This file sets up the fundamental HTML structure of the web app, including the layout for content and interactive buttons.
+*   **`styles.css`**: This file manages the application's visual appearance, ensuring it is user-friendly and responsive across different devices.
+*   **`script.js`**: This file powers the app's interactivity, handling API requests to the AWS backend and displaying the retrieved data on the page.
 
 These files serve as the frontend building blocks of the application. Once the user interacts with the web page, `script.js` communicates with the backend (hosted on AWS Lambda) through API calls, retrieves data from the DynamoDB database, and displays the results dynamically on the frontend.
 
