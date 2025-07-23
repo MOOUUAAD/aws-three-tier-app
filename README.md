@@ -159,7 +159,7 @@ The Logic Layer is the backend brain of the application. It processes requests f
 
 ### Step 1: Creating the Lambda Function
 
-I wrote a Lambda function in Python to handle the backend logic. When triggered, this function queries the DynamoDB table based on the `userId` passed from the frontend.
+I wrote a Lambda function in NodeJs to handle the backend logic. When triggered, this function queries the DynamoDB table based on the `userId` passed from the frontend.
 
 *(Images of Lambda function creation and testing will be displayed here)*
 
