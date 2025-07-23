@@ -237,7 +237,8 @@ After updating the `script.js` file in S3, the website still didn't work because
 
 After successfully configuring CORS and refreshing the CloudFront distribution, the application worked as expected! Searching for a `userId` now correctly fetches and displays the data from DynamoDB.
 
-*(Image of the final working application will be displayed here)*
+<img width="1365" height="680" alt="image" src="https://github.com/user-attachments/assets/5904d11b-bbf4-407f-be7c-e30a145e37c7" />
+
 
 ---
 
