@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Building A Three-Tier Web App on AWS 🚀
+## 🚀 Building A Three-Tier Web App on AWS 🚀
 
 </div>
 
