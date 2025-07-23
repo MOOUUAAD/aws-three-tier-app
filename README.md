@@ -246,7 +246,6 @@ After successfully configuring CORS and refreshing the CloudFront distribution, 
 
 *   **Three-Tier Architecture Implementation**: I successfully implemented a full three-tier architecture using a serverless and cloud-native approach on AWS.
 *   **Seamless Service Integration**: I gained hands-on experience integrating S3, CloudFront, Lambda, API Gateway, and DynamoDB to create a cohesive application.
-*   **Importance of CORS**: I learned how to diagnose and resolve CORS issues, a critical skill for developing web applications with separate frontend and backend resources.
 *   **CloudFront Caching and Invalidation**: I understood the practical application of CDN caching and how to manage it with invalidations to deploy updates effectively.
 *   **Iterative Debugging**: This project reinforced the importance of systematic debugging using browser tools, logs, and testing at each integration point.
 
