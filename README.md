@@ -10,8 +10,6 @@
 
 <div align="center">
 
-<div align="center">
-
 ### 🛠️ Tech Stack & Services Used
 
 *Organized by architectural tier*
@@ -27,17 +25,6 @@
 | 🗃️ **Data Layer**        | <div style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap;"><div style="text-align: center;"><img src="https://icon.icepanel.io/AWS/svg/Database/DynamoDB.svg" alt="Amazon DynamoDB" height="45"><br><sub>DynamoDB</sub></div></div>                                                                                                                                                                                                                                                                                                                                  |
 
 </div>
-
----
-
-### 🏗️ 3-Tier Architecture
-
-This application showcases how I seamlessly connected various AWS services to build a powerful, cost-effective web app. I can interact with the app by sending HTTP requests to an API Gateway endpoint, where Lambda functions process the data and return responses based on the DynamoDB contents.
-
-<p align="center">
-  <img width="633" height="467" alt="image" src="https://github.com/user-attachments/assets/4b8913d0-1a18-4913-942c-7055cb0cf93e" />
-</p>
-
 ---
 
 ## 📚 Table of Contents
